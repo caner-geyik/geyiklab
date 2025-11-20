@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members | GeyikLab</title>
+    <meta name="description" content="Meet the team at GeyikLab. Principal Investigator, graduate students, and alumni.">
+    
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- 1. VARIABLES & THEME --- */
+        :root {
+            --primary: #0f172a;    /* Deep Navy */
+            --secondary: #334155;  /* Slate */
+            --accent: #0284c7;     /* Scientific Blue */
+            --bg-hero: #f8fafc;    /* Light Grey */
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --max-width: 1100px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- 2. GLOBAL RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--secondary);
+            line-height: 1.6;
+            background-color: var(--white);
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; color: var(--primary); }
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+
+        /* --- 3. HEADER (Standard) --- */
+        header {
+            background: var(--white); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 1000; padding: 0.5rem 0;
+        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.5rem; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav a { font-weight: 600; font-size: 0.95rem; color: var(--secondary); padding: 0.5rem 0; border-bottom: 2px solid transparent; }
+        nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+        /* --- 4. PAGE CONTENT --- */
+        main { padding-bottom: 4rem; }
+
+        /* Group Photo Section */
+        .group-photo-section {
+            background-color: var(--bg-hero);
+            padding: 3rem 0 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 4rem;
+        }
+        .group-photo-placeholder {
+            width: 100%;
+            max-width: 900px;
+            height: 400px;
+            background-color: #cbd5e1; /* Grey placeholder */
+            margin: 2rem auto 0 auto;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--primary); font-weight: 600;
+            box-shadow: var(--shadow);
+            /* Once you have a real image, remove background-color and use: 
+               background-image: url('your-image.jpg'); background-size: cover; */
+        }
+
+        /* Section Headings */
+        .category-title {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin: 3rem 0 2rem 0;
+            font-size: 1.75rem;
+        }
+
+        /* Member Cards Grid */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .member-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        /* Member Photo (Circle) */
+        .member-photo {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            background-color: #e2e8f0; /* Placeholder grey */
+            margin: 0 auto 1.5rem auto;
+            object-fit: cover;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 1px var(--border);
+        }
+
+        .member-card h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }
+        .member-role {
+            color: var(--accent); font-weight: 700; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem;
+        }
+        .member-bio { font-size: 0.95rem; color: #475569; line-height: 1.5; }
+
+        /* Alumni List */
+        .alumni-list { list-style: none; }
+        .alumni-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .alumni-name { font-weight: 700; color: var(--primary); min-width: 200px; }
+        .alumni-role { color: var(--secondary); }
+
+        /* --- 5. FOOTER --- */
+        footer { margin-top: auto; background: var(--primary); color: #cbd5e1; padding: 3rem 0; text-align: center; font-size: 0.9rem; }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
+            nav ul { margin-top: 1rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .group-photo-placeholder { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Geyik<span>Lab</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="members.html" class="active">Members</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Top Section: Group Photo -->
+        <section class="group-photo-section">
+            <div class="container">
+                <h1>Our Team</h1>
+                <p style="margin-top: 0.5rem;">The people behind the science.</p>
+                
+                <!-- Replace this div with an <img> tag when you have the file -->
+                <!-- Example: <img src="images/group-2025.jpg" class="group-photo-placeholder" alt="Lab Group Photo"> -->
+                <div class="group-photo-placeholder">
+                    Group Photo Placeholder (900x400px)
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            
+            <!-- PRINCIPAL INVESTIGATOR (Optional - remove if not needed here) -->
+            <h2 class="category-title">Principal Investigator</h2>
+            <div class="member-grid" style="margin-bottom: 3rem;"> <!-- Inline style to separate PI from students -->
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo"> <!-- Add src URL -->
+                    <h3>Dr. Caner Geyik</h3>
+                    <div class="member-role">Group Leader</div>
+                    <p class="member-bio">
+                        Focusing on RNA biology and stress responses. Ph.D. in Molecular Biology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PHD STUDENTS -->
+            <h2 class="category-title">Ph.D. Students</h2>
+            <div class="member-grid">
+                
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo"> 
+                    <h3>Student Name</h3>
+                    <div class="member-role">Ph.D. Candidate</div>
+                    <p class="member-bio">
+                        Investigating tsRNA biogenesis under hypoxic conditions.
+                    </p>
+                </div>
+
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">Ph.D. Candidate</div>
+                    <p class="member-bio">
+                        Studying Nrf2 pathway regulation in glioblastoma stem cells.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- MSC STUDENTS -->
+            <h2 class="category-title">M.Sc. Students</h2>
+            <div class="member-grid">
+                
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">M.Sc. Student</div>
+                    <p class="member-bio">
+                        Working on CRISPR-Cas9 screening of antioxidant genes.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- UNDERGRADUATE STUDENTS -->
+            <h2 class="category-title">Undergraduate Researchers</h2>
+            <div class="member-grid">
+                
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">B.Sc. Student</div>
+                    <p class="member-bio">
+                        Assisting with cell culture and western blot analysis.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- ALUMNI -->
+            <h2 class="category-title">Alumni</h2>
+            <ul class="alumni-list">
+                <li>
+                    <span class="alumni-name">Former Student Name (M.Sc. 2023)</span>
+                    <span class="alumni-role">Current: Ph.D. Student at [University Name]</span>
+                </li>
+                <li>
+                    <span class="alumni-name">Former Student Name (B.Sc. 2024)</span>
+                    <span class="alumni-role">Current: Industry Position at [Company]</span>
+                </li>
+                <li>
+                    <span class="alumni-name">Former Student Name (Postdoc)</span>
+                    <span class="alumni-role">Current: Assistant Professor at [University]</span>
+                </li>
+            </ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GeyikLab. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
