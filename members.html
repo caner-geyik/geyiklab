@@ -84,6 +84,43 @@
             font-size: 1.75rem;
         }
 
+        /* --- SPECIAL PI CARD DESIGN (Horizontal) --- */
+        .pi-card {
+            display: flex;
+            align-items: center; /* Vertically center the content */
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            gap: 3rem; /* Space between left and right side */
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 2rem;
+        }
+        .pi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+        
+        /* Left Side: Photo, Name, Title */
+        .pi-left {
+            flex: 0 0 240px; /* Fixed width for consistency */
+            text-align: center;
+            border-right: 1px solid var(--border);
+            padding-right: 2rem;
+        }
+        
+        /* Right Side: Bio */
+        .pi-right {
+            flex: 1; /* Takes all remaining space */
+        }
+
+        /* Update Mobile Media Query to handle PI card stacking */
+        @media (max-width: 850px) {
+            .pi-card { flex-direction: column; text-align: center; gap: 1.5rem; }
+            .pi-left { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 1.5rem; width: 100%; }
+        }
+        
         /* Member Cards Grid */
         .member-grid {
             display: grid;
@@ -146,7 +183,8 @@
         }
     </style>
 </head>
-<body>
+
+    <body>
 
     <header>
         <div class="container nav-wrapper">
@@ -179,15 +217,21 @@
 
         <div class="container">
             
-            <!-- PRINCIPAL INVESTIGATOR (Optional - remove if not needed here) -->
-            <h2 class="category-title">Principal Investigator</h2>
-            <div class="member-grid" style="margin-bottom: 3rem;"> <!-- Inline style to separate PI from students -->
-                <div class="member-card">
-                    <img src="" alt="" class="member-photo"> <!-- Add src URL -->
+            <!-- PRINCIPAL INVESTIGATOR (New Horizontal Design) -->
+            <h2 class="category-title" style="margin-top: 0;">Principal Investigator</h2>
+            
+            <div class="pi-card">
+                <div class="pi-left">
+                    <!-- Make sure to put your photo URL in src="" -->
+                    <img src="" alt="Dr. Caner Geyik" class="member-photo">
                     <h3>Dr. Caner Geyik</h3>
                     <div class="member-role">Group Leader</div>
+                </div>
+                <div class="pi-right">
                     <p class="member-bio">
-                        Focusing on RNA biology and stress responses. Ph.D. in Molecular Biology.
+                        Dr. Geyik received his Ph.D. in Molecular Biology from [University]. His research focuses on the non-canonical functions of tRNA-derived fragments. 
+                        <br><br>
+                        Prior to establishing GeyikLab, he completed postdoctoral training at [Institute], where he identified the role of oxidative stress in regulating RNA biogenesis. He is passionate about mentoring the next generation of scientists.
                     </p>
                 </div>
             </div>
@@ -205,6 +249,42 @@
                     </p>
                 </div>
 
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">Ph.D. Candidate</div>
+                    <p class="member-bio">
+                        Studying Nrf2 pathway regulation in glioblastoma stem cells.
+                    </p>
+                </div>
+                
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">Ph.D. Candidate</div>
+                    <p class="member-bio">
+                        Studying Nrf2 pathway regulation in glioblastoma stem cells.
+                    </p>
+                </div>
+                
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">Ph.D. Candidate</div>
+                    <p class="member-bio">
+                        Studying Nrf2 pathway regulation in glioblastoma stem cells.
+                    </p>
+                </div>
+                
+                <div class="member-card">
+                    <img src="" alt="" class="member-photo">
+                    <h3>Student Name</h3>
+                    <div class="member-role">Ph.D. Candidate</div>
+                    <p class="member-bio">
+                        Studying Nrf2 pathway regulation in glioblastoma stem cells.
+                    </p>
+                </div>
+            
                 <div class="member-card">
                     <img src="" alt="" class="member-photo">
                     <h3>Student Name</h3>
@@ -253,10 +333,10 @@
                 
                 <!-- Collaborator 1 -->
                 <div style="border-left: 4px solid var(--accent); padding-left: 1rem;">
-                    <h4 style="margin-bottom: 0.2rem; color: var(--primary);">Dr. Collaborator Name</h4>
+                    <h4 style="margin-bottom: 0.2rem; color: var(--primary);">Dr. Öykü GÖNÜL GEYİK</h4>
                     <p style="font-size: 0.9rem; color: #64748b;">
-                        Department of Neuroscience<br>
-                        <strong>University of X, Country</strong>
+                        Department of Medical Biology and Genetics <br>
+                        <strong>Istinye University, Faculty of Medicine</strong>
                     </p>
                 </div>
 
