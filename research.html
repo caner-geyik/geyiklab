@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research | GeyikLab</title>
-    <meta name="description" content="Research areas: tsRNA biology, Nrf2 pathway, and Glioblastoma resistance.">
+    <meta name="description" content="Research areas: Transcription factors in cancer, Biomarker discovery, and IVD biosensors.">
     
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- 1. VARIABLES & THEME (Matches Index) --- */
+        /* --- 1. VARIABLES & THEME --- */
         :root {
             --primary: #0f172a;    /* Deep Navy */
             --secondary: #334155;  /* Slate */
@@ -39,7 +39,7 @@
         h1, h2, h3 { font-family: 'Merriweather', serif; color: var(--primary); line-height: 1.3; }
         a { text-decoration: none; color: inherit; transition: color 0.2s; }
 
-        /* --- 3. HEADER (Same as Index) --- */
+        /* --- 3. HEADER --- */
         header {
             background: var(--white);
             border-bottom: 1px solid var(--border);
@@ -62,7 +62,7 @@
 
         nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-        /* --- 4. PAGE LAYOUT (Specific to Research Page) --- */
+        /* --- 4. PAGE LAYOUT --- */
         .page-header {
             background-color: var(--bg-hero);
             padding: 4rem 0;
@@ -91,11 +91,10 @@
         .sidebar-links a:hover { color: var(--accent); border-left-color: var(--border); }
 
         /* Research Articles */
-        article { margin-bottom: 4rem; scroll-margin-top: 120px; } /* Fixes scroll position */
+        article { margin-bottom: 4rem; scroll-margin-top: 120px; } 
         article h2 { font-size: 1.8rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
         article p { margin-bottom: 1.5rem; font-size: 1.1rem; }
         
-        /* Highlighting Key Terms */
         strong { color: var(--primary); }
 
         /* --- 5. FOOTER --- */
@@ -107,7 +106,7 @@
         /* Mobile */
         @media (max-width: 850px) {
             .content-wrapper { grid-template-columns: 1fr; gap: 2rem; }
-            aside { display: none; } /* Hide sidebar on mobile for simplicity */
+            aside { display: none; } 
             .nav-wrapper { flex-direction: column; height: auto; padding: 1rem 0; }
             nav ul { margin-top: 1rem; gap: 1rem; flex-wrap: wrap; justify-content: center; }
         }
@@ -136,7 +135,7 @@
         <div class="container">
             <h1>Research Focus</h1>
             <p style="font-size: 1.1rem; color: #475569; max-width: 700px; margin-top: 0.5rem;">
-                Our laboratory employs a multidisciplinary approach combining molecular biology, biochemistry, and bioinformatics.
+                Our multidisciplinary approach spans cancer biology, translational medicine, and diagnostic technology.
             </p>
         </div>
     </section>
@@ -148,44 +147,44 @@
         <aside>
             <div class="sidebar-title">On this page</div>
             <div class="sidebar-links">
-                <a href="#tsrna">tsRNA Biology</a>
-                <a href="#nrf2">Oxidative Stress (Nrf2)</a>
-                <a href="#glioblastoma">Drug Resistance</a>
+                <a href="#transcription">Transcription Factors</a>
+                <a href="#biomarkers">Biomarker Discovery</a>
+                <a href="#diagnostics">IVD & Biosensors</a>
             </div>
         </aside>
 
         <!-- RIGHT CONTENT -->
         <main>
             <!-- Topic 1 -->
-            <article id="tsrna">
-                <h2>1. tsRNA Biology in Health and Disease</h2>
+            <article id="transcription">
+                <h2>1. Transcription Factors in Cancer</h2>
                 <p>
-                    Transfer RNA-derived small RNAs (tsRNAs) were long considered random degradation products. However, recent evidence suggests they are <strong>functional, regulated non-coding RNAs</strong> that play critical roles in gene expression.
+                    Transcription factors are critical regulators of gene expression often dysregulated in cancer. Our lab focuses on targeting "undruggable" targets such as <strong>NRF2</strong>, <strong>CLOCK</strong>, and <strong>FOSB</strong>.
                 </p>
                 <p>
-                    Our lab investigates how tsRNA biogenesis is triggered by specific cellular stressors. Unlike microRNAs, tsRNAs can inhibit translation by displacing the initiation complex. We are mapping the "tsRNAome" in various cell lines to identify specific signatures associated with disease states.
+                    We employ a dual strategy using both <strong>small molecule inhibitors</strong> and <strong>aptamers</strong> (nucleic acid-based ligands) to disrupt the protein-DNA or protein-protein interactions of these factors. By modulating their activity, we aim to overcome chemotherapy resistance and improve therapeutic outcomes in solid tumors.
                 </p>
             </article>
 
             <!-- Topic 2 -->
-            <article id="nrf2">
-                <h2>2. Oxidative Stress and Nrf2 Signaling</h2>
+            <article id="biomarkers">
+                <h2>2. Diagnostic & Prognostic Biomarker Discovery</h2>
                 <p>
-                    The <strong>Nrf2 (nuclear factor erythroid 2-related factor 2)</strong> pathway is the cell's primary defense mechanism against oxidative stress. Dysregulation of this pathway is a hallmark of both neurodegenerative diseases and cancer.
+                    Bridging the gap between basic science and the clinic, this research axis is closely integrated with our <strong>Medical Oncology Ph.D. program</strong>. We utilize high-throughput sequencing and proteomic approaches to identify novel biomarkers.
                 </p>
                 <p>
-                    We are exploring the crosstalk between non-coding RNAs and Nrf2. Specifically, we aim to understand how certain RNA species can sequester Nrf2 in the cytoplasm or promote its translocation to the nucleus, thereby altering the cell's antioxidant response.
+                    Our work involves analyzing both <strong>preclinical models</strong> and <strong>clinical patient samples</strong> (tissue and liquid biopsy). The goal is to discover robust signatures that can predict patient response to therapy or signal early disease recurrence.
                 </p>
             </article>
 
             <!-- Topic 3 -->
-            <article id="glioblastoma">
-                <h2>3. Mechanisms of Therapy Resistance</h2>
+            <article id="diagnostics">
+                <h2>3. In Vitro Diagnostics (IVD) & Biosensors</h2>
                 <p>
-                    Glioblastoma is the most aggressive form of brain cancer. Standard of care involves the alkylating agent Temozolomide (TMZ), but resistance develops rapidly.
+                    Translating our findings into practical tools is a key priority. Through our <strong>spin-off industrial enterprise</strong>, we are developing advanced biosensing platforms.
                 </p>
                 <p>
-                    Our hypothesis is that stress-induced RNAs and elevated Nrf2 activity confer a survival advantage to cancer cells against TMZ. By defining these molecular mechanisms, we hope to identify <strong>novel targets</strong> that can re-sensitize resistant tumors to chemotherapy.
+                    These efforts are focused on creating rapid, sensitive <strong>assays for drug resistance</strong>. By detecting specific resistance markers directly from patient samples, we aim to facilitate personalized treatment decisions and reduce the time to effective therapy.
                 </p>
             </article>
         </main>
