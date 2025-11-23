@@ -266,32 +266,48 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR SLIDER -->
+<!-- JAVASCRIPT FOR SLIDER -->
     <script>
         let slideIndex = 0;
-        showSlides(); 
+        let slideTimer; // Variable to hold the timer
+
+        // Wait for the page to load completely before starting
+        document.addEventListener("DOMContentLoaded", function() {
+            showSlides();
+        });
 
         function showSlides() {
             let i;
             let slides = document.getElementsByClassName("slide");
             let dots = document.getElementsByClassName("dot");
             
+            // Safety check: if no slides exist, stop.
+            if (slides.length === 0) return;
+
+            // Hide all slides
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
                 dots[i].className = dots[i].className.replace(" active", "");
             }
             
+            // Increment index
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             
+            // Show the current slide
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
             
-            setTimeout(showSlides, 5000); 
+            // Clear any existing timer so they don't stack up
+            clearTimeout(slideTimer);
+            // Set new timer for 5 seconds
+            slideTimer = setTimeout(showSlides, 5000); 
         }
 
+        // Manual Navigation Function
         function currentSlide(n) {
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            
-            for (let i
+            // We set slideIndex to n-1 because showSlides() will increment it immediately
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
